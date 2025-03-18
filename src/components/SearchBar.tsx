@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 
-export default function SearchBar() {
+interface SearchBarProps {
+  onSearch: (movieTitle: string) => void;
+}
+
+export default function SearchBar({ onSearch }: SearchBarProps) {
   const [searchedMovie, setSearchedMovie] = useState("");
 
-  const handleSearch = () => {};
+  const handleSearch = async () => {
+    onSearch(searchedMovie);
+  };
 
-  const handleInputChange = () => {};
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const input = event.target.value;
+    setSearchedMovie(input);
+  };
 
   return (
     <div className="mt-4 text-center flex flex-row justify-center gap-2">
