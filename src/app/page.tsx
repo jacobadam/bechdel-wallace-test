@@ -1,15 +1,17 @@
 "use client";
 
+import React, { useState } from "react";
 import SearchBar from "@/components/SearchBar";
 import { getMovieByTitle } from "@/utils/  bechdelTestApi";
+import { Movie } from "@/types/movieTypes";
 
 export default function Home() {
+  const [movieData, setMovieData] = useState<Movie[]>([]);
   const handleApiSearch = async (movieTitle: string) => {
     console.log(movieTitle);
     try {
-      const movieData = await getMovieByTitle(movieTitle);
-
-      console.log(movieData);
+      const data = await getMovieByTitle(movieTitle);
+      setMovieData(data);
     } catch (err) {
       console.log(err);
     }
