@@ -1,3 +1,7 @@
+"use client";
+
+import SearchBar from "@/components/SearchBar";
+
 export default function Home() {
   return (
     <div>
@@ -9,6 +13,7 @@ export default function Home() {
         <li>2. Who talk to each other</li>
         <li>3. About something besides a man</li>
       </ol>
+      <SearchBar />
     </div>
   );
 }
