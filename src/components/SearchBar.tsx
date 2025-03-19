@@ -4,7 +4,7 @@ interface SearchBarProps {
   onSearch: (movieTitle: string) => void;
 }
 
-export default function SearchBar({ onSearch }: SearchBarProps) {
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [searchedMovie, setSearchedMovie] = useState("");
 
   const handleSearch = async () => {
@@ -34,4 +34,6 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
       </button>
     </div>
   );
-}
+};
+
+export default SearchBar;
