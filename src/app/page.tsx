@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import SearchBar from "@/components/SearchBar";
+import Results from "@/components/Results";
 import { getMovieByTitle } from "@/utils/  bechdelTestApi";
 import { Movie } from "@/types/movieTypes";
 
-export default function Home() {
+const Home: React.FC = () => {
   const [movieData, setMovieData] = useState<Movie[]>([]);
   const handleApiSearch = async (movieTitle: string) => {
-    console.log(movieTitle);
     try {
       const data = await getMovieByTitle(movieTitle);
       setMovieData(data);
@@ -27,6 +27,9 @@ export default function Home() {
         <li>3. About something besides a man</li>
       </ol>
       <SearchBar onSearch={handleApiSearch} />
+      <Results movieData={movieData} />
     </div>
   );
-}
+};
+
+export default Home;
