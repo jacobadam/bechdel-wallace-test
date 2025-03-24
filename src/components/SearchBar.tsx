@@ -30,7 +30,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       setIsLoading(true);
       try {
         const data = await getMovieByTitle(searchTerm);
-        console.log(data);
         setSearchResults(data);
       } catch (err) {
         console.log(err);
