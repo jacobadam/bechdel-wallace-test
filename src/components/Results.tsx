@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { Movie } from "@/types/movieTypes";
+import ParticlesBackground from "./ParticlesBackground";
 
 interface MovieDataProps {
   movieData: Movie[];
@@ -10,13 +11,14 @@ interface MovieDataProps {
 const Results: React.FC<MovieDataProps> = ({ movieData }) => {
   return (
     <div className="text-center mt-4">
-      {movieData && movieData.length > 0 ? (
+      {movieData && movieData.length > 0 && (
         <ul key={movieData[0].id}>
           <li>{movieData[0].title}</li>
           <li>{movieData[0].year}</li>
           {movieData[0].rating === 3 ? (
             <li>
               <div className="flex justify-center items-center">
+                <ParticlesBackground />
                 <Image src="/true.png" width={100} height={100} alt="Pass" />
               </div>
             </li>
@@ -33,8 +35,6 @@ const Results: React.FC<MovieDataProps> = ({ movieData }) => {
             </li>
           )}
         </ul>
-      ) : (
-        <div>No movie data available.</div>
       )}
     </div>
   );
