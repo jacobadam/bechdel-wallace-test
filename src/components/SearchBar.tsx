@@ -9,7 +9,6 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-  // const [searchedMovie, setSearchedMovie] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -45,11 +44,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     return () => clearTimeout(delayDebounceFn);
   }, [searchTerm]);
 
-  const handleSearchButtonClick = () => {
-    onSearch(searchTerm);
-    setSearchResults([]);
-  };
-
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
@@ -57,6 +51,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const handleMovieSelect = (movie: Movie) => {
     isMovieSelection.current = true;
     setSearchTerm(movie.title);
+    onSearch(movie.title);
     setSearchResults([]);
   };
 
@@ -66,18 +61,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         <input
           type="search"
           id="input"
-          className="block w-full max-w-xs px-4 py-2 text-base font-normal shadow-xs text-white bg-transparent border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none leading-relaxed text-center"
+          className="block w-full max-w-xs px-4 py-2 text-base font-normal shadow-xs text-red bg-transparent border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none leading-relaxed text-center"
           placeholder="Search for a movie..."
           required
           value={searchTerm}
           onChange={handleInputChange}
         />
-        <button
-          onClick={handleSearchButtonClick}
-          className="py-2.5 px-6 text-sm bg-indigo-500 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-700"
-        >
-          Search
-        </button>
       </div>
 
       {isLoading && <p>Loading...</p>}
@@ -88,7 +77,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
             <li
               key={index}
               onClick={() => handleMovieSelect(movie)}
-              className="cursor-pointer hover:bg-gray-100 p-2"
+              className="cursor-pointer hover:bg-gray-50 p-2 text-red-400"
             >
               {movie.title} ({movie.year})
             </li>
