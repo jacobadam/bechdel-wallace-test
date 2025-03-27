@@ -21,11 +21,18 @@ const Home: React.FC = () => {
       <h1 className="font-extrabold text-center text-3xl mt-4">
         Bechdel Test Checker
       </h1>
-      <ol className="text-center my-12">
-        <li>1. It has to have at least two [named] women in it</li>
-        <li>2. Who talk to each other</li>
-        <li>3. About something besides a man</li>
-      </ol>
+
+      <div className="flex flex-col items-start text-left my-12 mx-auto max-w-fit">
+        <ol className="list-inside pl-0">
+          <li className="relative mb-1 left-0">
+            <b>1</b>. It has to have at least two [named] women in it
+          </li>
+          <li className="relative mb-1 left-9">2. Who talk to each other</li>
+          <li className="relative mb-1 left-18">
+            3. About something besides a man
+          </li>
+        </ol>
+      </div>
       <SearchBar onSearch={handleApiSearch} />
       <Results movieData={movieData} />
     </div>
