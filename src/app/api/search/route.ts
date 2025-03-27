@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { decode } from "html-entities";
 
 export async function GET(request: NextRequest) {
   try {
@@ -23,9 +24,25 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const data = await searchResults.json();
+    let data = await searchResults.json();
 
-    if (data.length === 0) {
+    if (Array.isArray(data)) {
+      data = data.map((item) => {
+        if (typeof item.title === "string") {
+          return { ...item, title: decode(item.title) };
+        }
+        return item;
+      });
+    } else if (typeof data.title === "string") {
+      data.title = decode(data.title);
+    }
+
+    if (Array.isArray(data) && data.length === 0) {
+      return NextResponse.json({
+        error: "Movie not found",
+        status: 404,
+      });
+    } else if (!Array.isArray(data) && !data.title) {
       return NextResponse.json({
         error: "Movie not found",
         status: 404,
