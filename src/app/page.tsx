@@ -25,11 +25,13 @@ const Home: React.FC = () => {
       <div className="flex flex-col items-start text-left my-12 mx-auto max-w-fit">
         <ol className="list-inside pl-0">
           <li className="relative mb-1 left-0">
-            <b>1</b>. It has to have at least two [named] women in it
+            <b>1.</b> It has to have at least two [named] women in it
           </li>
-          <li className="relative mb-1 left-9">2. Who talk to each other</li>
+          <li className="relative mb-1 left-9">
+            <b>2.</b> Who talk to each other
+          </li>
           <li className="relative mb-1 left-18">
-            3. About something besides a man
+            <b>3.</b> About something besides a man
           </li>
         </ol>
       </div>
