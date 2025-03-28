@@ -21,14 +21,19 @@ const Results: React.FC<MovieDataProps> = ({ movieData }) => {
                 <div>
                   <div className="flex justify-center items-center">
                     <ParticlesBackground />
-                    TRUE!!!
                   </div>
                 </div>
               ) : (
-                <div>
-                  <div className="flex justify-center items-center">
-                    FALSE!!!
-                  </div>
+                <div className="flex justify-center items-center">
+                  <video
+                    src="/fail-black.mp4"
+                    autoPlay
+                    muted
+                    loop={false}
+                    playsInline
+                    width={480}
+                    height={480}
+                  />
                 </div>
               )}
             </li>
