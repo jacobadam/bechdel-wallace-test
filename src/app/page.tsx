@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import SearchBar from "@/components/SearchBar";
 import Results from "@/components/Results";
 import { getMovieByTitle } from "@/utils/  bechdelTestApi";
@@ -20,7 +21,12 @@ const Home: React.FC = () => {
   return (
     <div className="w-screen">
       <div className="flex flex-row mx-auto w-auto items-center justify-between ">
-        <div className="mt-4 ml-4 text-xs sm:text-base">Logo</div>
+        <Image
+          src="/bt-logo-black.gif"
+          width={80}
+          height={80}
+          alt="Picture of the author"
+        />
         <h1 className="relative flex-1 font-extrabold text-center text-lg sm:text-3xl mt-4 justify-center">
           Bechdel Test Checker
         </h1>
