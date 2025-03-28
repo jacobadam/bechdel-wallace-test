@@ -58,7 +58,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex w-80 gap-1">
+      <div className="flex w-auto sm:w-80 gap-1">
         <input
           type="search"
           id="input"
@@ -93,7 +93,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       )}
 
       {searchResults.length > 0 && (
-        <ul className="w-80 border rounded p-2">
+        <ul className="w-80 border rounded p-2 mt-4 sm:mt-0">
           {searchResults.map((movie, index) => (
             <li
               key={index}
