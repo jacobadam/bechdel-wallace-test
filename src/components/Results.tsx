@@ -13,33 +13,31 @@ const Results: React.FC<MovieDataProps> = ({ movieData }) => {
     <div className="text-center mt-4">
       {movieData && movieData.length > 0 && (
         <ul>
-          {movieData.map((movie) => (
-            <li key={movie.id}>
-              <div className="text-2xl font-extrabold text-[#ff914d]">
-                {decode(movie.title)}
-              </div>
-              <div className="text-xl font-bold">{movie.year}</div>
-              {movie.rating === 3 ? (
-                <div>
-                  <div className="flex justify-center items-center">
-                    <ParticlesBackground />
-                  </div>
-                </div>
-              ) : (
+          <li key={movieData[0].id}>
+            <div className="text-2xl font-extrabold">
+              {decode(movieData[0].title)}
+            </div>
+            <div className="text-xl font-bold">{movieData[0].year}</div>
+            {movieData[0].rating === 3 ? (
+              <div>
                 <div className="flex justify-center items-center">
-                  <video
-                    src="/fail-black.mp4"
-                    autoPlay
-                    muted
-                    loop={false}
-                    playsInline
-                    width={480}
-                    height={480}
-                  />
+                  <ParticlesBackground />
                 </div>
-              )}
-            </li>
-          ))}
+              </div>
+            ) : (
+              <div className="flex justify-center items-center">
+                <video
+                  src="/fail-black.mp4"
+                  autoPlay
+                  muted
+                  loop={false}
+                  playsInline
+                  width={480}
+                  height={480}
+                />
+              </div>
+            )}
+          </li>
         </ul>
       )}
     </div>
