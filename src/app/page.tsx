@@ -37,9 +37,6 @@ const Home: React.FC = () => {
             height={80}
           />
         </div>
-        <h1 className="relative flex-1 font-extrabold text-center text-lg sm:text-4xl mt-2 justify-center">
-          Bechdel Test
-        </h1>
 
         <div className="mt-4 mr-8 text-xs sm:text-base">
           <div className="group relative">
@@ -62,7 +59,11 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center content-center my-12">
+      <h1 className="relative flex-1 font-base text-center text-lg sm:text-6xl mt-6 mb-18 justify-center">
+        Bechdel Test
+      </h1>
+
+      <div className="flex flex-col items-center content-center my-16">
         <ol>
           <li className="text-xs sm:text-lg">
             <b>1.</b> It has to have at least two [named] women in it
