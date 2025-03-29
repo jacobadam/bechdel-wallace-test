@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import SearchBar from "@/components/SearchBar";
 import Results from "@/components/Results";
 import { getMovieByTitle } from "@/utils/  bechdelTestApi";
@@ -21,11 +20,14 @@ const Home: React.FC = () => {
     <div className="w-screen">
       <div className="flex flex-row mx-auto w-auto items-center justify-between ">
         <div className="mt-2">
-          <Image
-            src="/bt-logo-black.gif"
+          <video
+            src="/black-logo.mp4"
+            autoPlay
+            muted
+            loop={false}
+            playsInline
             width={80}
             height={80}
-            alt="Picture of the author"
           />
         </div>
         <h1 className="relative flex-1 font-extrabold text-center text-lg sm:text-3xl mt-2 justify-center">
