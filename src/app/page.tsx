@@ -35,7 +35,7 @@ const Home: React.FC = () => {
           Bechdel Test Checker
         </h1>
 
-        <div className="mt-4 mr-4 text-xs sm:text-base">
+        <div className="mt-4 mr-8 text-xs sm:text-base">
           <div className="group relative">
             <button>
               <b>About</b>
