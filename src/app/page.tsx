@@ -9,7 +9,13 @@ import { Movie } from "@/types/movieTypes";
 
 const Home: React.FC = () => {
   const [movieData, setMovieData] = useState<Movie[]>([]);
-  const handleApiSearch = async (movieTitle: string) => {
+  const [selectedMovieYear, setSelectedMovieYear] = useState<number | null>(
+    null
+  );
+
+  const handleApiSearch = async (movieTitle: string, movieYear: number) => {
+    setSelectedMovieYear(movieYear);
+
     try {
       const data = await getMovieByTitle(movieTitle);
       setMovieData(data);
@@ -70,7 +76,7 @@ const Home: React.FC = () => {
         </ol>
       </div>
       <SearchBar onSearch={handleApiSearch} />
-      <Results movieData={movieData} />
+      <Results movieData={movieData} selectedMovieYear={selectedMovieYear} />
       <Footer />
     </div>
   );
