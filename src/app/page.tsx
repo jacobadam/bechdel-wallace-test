@@ -63,15 +63,18 @@ const Home: React.FC = () => {
         Bechdel Test
       </h1>
 
-      <div className="flex flex-col items-center content-center my-16">
+      <div className="flex flex-col items-center text-center my-16">
         <ol>
+          <li className="text-xs sm:text-lg mb-8">
+            How a film passes the Bechdel test:
+          </li>
           <li className="text-xs sm:text-lg">
             <b>1.</b> It has to have at least two [named] women in it
           </li>
-          <li className="text-xs sm:text-lg ml-8">
+          <li className="text-xs sm:text-lg">
             <b>2.</b> Who talk to each other
           </li>
-          <li className="text-xs sm:text-lg ml-16">
+          <li className="text-xs sm:text-lg">
             <b>3.</b> About something besides a man
           </li>
         </ol>
