@@ -68,6 +68,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           required
           value={searchTerm}
           onChange={handleInputChange}
+          autoComplete="new-password"
         />
       </div>
 
