@@ -17,7 +17,7 @@ const Home: React.FC = () => {
     }
   };
   return (
-    <div className="w-screen">
+    <div className="w-screen min-h-screen flex flex-col">
       <div className="flex flex-row mx-auto w-auto items-center justify-between ">
         <div className="mt-2">
           <video
@@ -70,6 +70,11 @@ const Home: React.FC = () => {
       </div>
       <SearchBar onSearch={handleApiSearch} />
       <Results movieData={movieData} />
+      <div className="mt-auto">
+        <div className="bottom-2 left-4 text-xs text-white">
+          &copy; 2025 Jacob Nevitt
+        </div>
+      </div>
     </div>
   );
 };
