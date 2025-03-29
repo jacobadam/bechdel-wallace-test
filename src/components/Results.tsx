@@ -15,8 +15,10 @@ const Results: React.FC<MovieDataProps> = ({ movieData }) => {
         <ul>
           {movieData.map((movie) => (
             <li key={movie.id}>
-              <div>{decode(movie.title)}</div>
-              <div>{movie.year}</div>
+              <div className="text-2xl font-extrabold text-[#ff914d]">
+                {decode(movie.title)}
+              </div>
+              <div className="text-xl font-bold">{movie.year}</div>
               {movie.rating === 3 ? (
                 <div>
                   <div className="flex justify-center items-center">
