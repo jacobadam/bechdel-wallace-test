@@ -6,7 +6,7 @@ import { getMovieByTitle } from "@/utils/  bechdelTestApi";
 import { decode } from "html-entities";
 
 interface SearchBarProps {
-  onSearch: (movieTitle: string) => void;
+  onSearch: (movieTitle: string, movieYear: number) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
@@ -52,7 +52,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const handleMovieSelect = (movie: Movie) => {
     isMovieSelection.current = true;
     setSearchTerm(decode(movie.title));
-    onSearch(movie.title);
+    onSearch(movie.title, movie.year);
     setSearchTerm("");
     setSearchResults([]);
   };
