@@ -38,7 +38,7 @@ const Home: React.FC = () => {
           />
         </div>
         <h1 className="relative flex-1 font-extrabold text-center text-lg sm:text-4xl mt-2 justify-center">
-          Bechdel Test Checker
+          Bechdel Test
         </h1>
 
         <div className="mt-4 mr-8 text-xs sm:text-base">
