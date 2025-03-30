@@ -59,7 +59,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <h1 className="relative flex-1 font-base text-center text-lg sm:text-6xl mt-6 mb-18 justify-center">
+      <h1 className="relative flex-1 font-base text-center text-3xl sm:text-6xl mt-6 mb-14 justify-center">
         Bechdel Test
       </h1>
 
