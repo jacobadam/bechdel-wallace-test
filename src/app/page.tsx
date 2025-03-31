@@ -39,16 +39,16 @@ const Home: React.FC = () => {
           />
         </div>
 
+        <h1 className="relative flex-1 font-base text-center text-3xl sm:text-6xl mt-8 mb-4 justify-center">
+          Bechdel Test
+        </h1>
+
         <div className="mt-4 mr-8 text-xs sm:text-base">
           <AboutInformation />
         </div>
       </div>
 
-      <h1 className="relative flex-1 font-base text-center text-3xl sm:text-6xl mt-6 mb-10 justify-center">
-        Bechdel Test
-      </h1>
-
-      <div className="flex flex-col items-center text-center my-12">
+      <div className="flex flex-col items-center text-center my-8">
         <ol>
           <li className="text-xs sm:text-xl mb-2 font-bold">
             How a film passes the Bechdel test:
