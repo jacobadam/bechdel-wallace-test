@@ -50,7 +50,7 @@ const Home: React.FC = () => {
 
       <div className="flex flex-col items-center text-center my-16">
         <ol>
-          <li className="text-xs sm:text-lg mb-8">
+          <li className="text-xs sm:text-lg mb-8 font-bold">
             How a film passes the Bechdel test:
           </li>
           <li className="text-xs sm:text-lg italic">
