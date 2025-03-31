@@ -1,0 +1,2 @@
+export const aboutText =
+  'The Bechdel-Wallace Test, often known as the Bechdel Test, is a basic measure assessing female representation in films. It stipulates three key criteria: firstly, the film must feature at least two named female characters, secondly, these characters must engage in conversation with each other, and thirdly, their dialogue must center on a topic other than men. This simple test, originating from Alison Bechdel\'s 1985 comic strip "Dykes to Watch Out For," highlights the frequent lack of meaningful female interaction in cinematic narratives.';
