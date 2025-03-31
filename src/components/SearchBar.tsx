@@ -100,7 +100,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
             <li
               key={index}
               onClick={() => handleMovieSelect(movie)}
-              className="cursor-pointer hover:bg-gray-50 p-2 text-red-400"
+              className="cursor-pointer hover:bg-gray-50 p-2 text-[#ff914d] font-semibold"
             >
               {decode(movie.title)} ({movie.year})
             </li>
