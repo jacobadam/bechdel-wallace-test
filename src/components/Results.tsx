@@ -23,10 +23,10 @@ const Results: React.FC<MovieDataProps> = ({
         <ul>
           {filteredMovieData.map((movie) => (
             <li key={movie.id}>
-              <div className="text-2xl font-extrabold">
+              <div className="text-base xs:text-xl 2xl:text-2xl font-extrabold">
                 {decode(movie.title)}
               </div>
-              <div className="text-xl font-bold">{movie.year}</div>
+              <div className="text-sm xs:text-xl font-bold">{movie.year}</div>
               {movie.rating === 3 ? (
                 <div>
                   <div className="flex justify-center items-center">
@@ -41,8 +41,8 @@ const Results: React.FC<MovieDataProps> = ({
                     muted
                     loop={false}
                     playsInline
-                    width={480}
-                    height={480}
+                    width={460}
+                    height={460}
                   />
                 </div>
               )}
