@@ -30,7 +30,7 @@ const AboutInformation: React.FC = () => {
       </button>
 
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-50">
           <div className="bg-black/100 text-white text-sm rounded p-4 min-w-96 max-w-lg border border-white whitespace-normal text-center relative m-4">
             <button className="absolute top-2 right-2" onClick={handleClose}>
               X
