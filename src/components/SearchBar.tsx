@@ -76,7 +76,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         <div role="status">
           <svg
             aria-hidden="true"
-            className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#ff914d] my-4"
+            className="w-8 h-8 text-gray-600 animate-spin fill-[#ff914d] my-4"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
