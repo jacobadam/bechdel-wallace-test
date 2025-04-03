@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import useIsTouchDevice from "@/app/hooks/useIsTouchDevice";
 import { aboutText } from "@/app/data/aboutText";
@@ -12,6 +14,10 @@ const AboutInformation: React.FC = () => {
     }
   };
 
+  const handleClose = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <button className="relative group font-extrabold" onClick={handleClick}>
@@ -24,15 +30,12 @@ const AboutInformation: React.FC = () => {
       </button>
 
       {isModalOpen && (
-        <div className="fixed inset-0  flex justify-center items-center p-4 bg-black bg-opacity-80 z-50">
-          <div className="bg-black text-white text-sm rounded p-4 min-w-96 max-w-lg border border-white whitespace-normal text-center relative">
-            <button
-              className="absolute top-2 right-2"
-              onClick={() => setIsModalOpen(false)}
-            >
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 m-4">
+          <div className=" text-white text-sm rounded p-4 min-w-96 max-w-lg border border-white whitespace-normal text-center relative">
+            <button className="absolute top-2 right-2" onClick={handleClose}>
               X
             </button>
-            <p className="mt-4">{aboutText}</p>
+            <p className="my-4">{aboutText}</p>
           </div>
         </div>
       )}
