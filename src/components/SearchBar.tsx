@@ -58,7 +58,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex flex-col items-center mt-6">
+    <div className="flex flex-col items-center mt-6 sm:max-lg:mt-16">
       <form className="max-w-3xl w-9/12">
         <label className="mb-2 text-base font-medium sr-only">Search</label>
         <div className="relative">

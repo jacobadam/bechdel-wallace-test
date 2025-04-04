@@ -27,7 +27,7 @@ const Home: React.FC = () => {
   return (
     <div className="w-screen min-h-screen">
       <div className="flex flex-row mx-auto w-auto items-center justify-between ">
-        <div className="mt-2">
+        <div>
           <video
             src="/black-logo.mp4"
             autoPlay
@@ -44,11 +44,11 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <h1 className="relative flex-1 font-base text-center text-2xl xs:text-3xl sm:text-5xl 2xl:text-6xl mt-2 mb-4 sm:mb-8 justify-center">
+      <h1 className="relative flex-1 font-base text-center text-2xl xs:text-3xl sm:text-5xl 2xl:text-6xl sm:max-lg:mt-16 mt-2 2xl:mt-12 mb-4 sm:mb-8 justify-center limitedHeight:text-blue-500">
         Bechdel-Wallace Test
       </h1>
 
-      <div className="flex flex-col items-center text-center mt-8 mb-4">
+      <div className="flex flex-col items-center text-center sm:max-lg:mt-16 mt-8 mb-4">
         <ol>
           <li className="text-xs sm:text-lg mb-1 font-bold">
             How a film passes the Bechdel-Wallace test:
