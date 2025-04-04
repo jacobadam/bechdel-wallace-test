@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bechdel Test Checker",
+  title: "Bechdel-Wallace Test Checker",
   description:
-    "Check if a movie passes the Bechdel Test. Enter a film title and see the results.",
+    "Check if a movie passes the Bechdel-Wallace Test. Enter a film title and see the results.",
 };
 
 export default function RootLayout({
