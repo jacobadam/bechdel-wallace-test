@@ -44,8 +44,8 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <h1 className="relative flex-1 font-base text-center text-2xl xs:text-3xl sm:text-5xl 2xl:text-6xl mt-16 sm:max-lg:mt-16 lg:mt-4 2xl:mt-12 mb-4 sm:mb-8 justify-center limitedHeight:text-blue-500">
-        Bechdel-Wallace Test
+      <h1 className="relative flex-1 text-center text-3xl xs:text-4xl sm:text-5xl 2xl:text-6xl mt-16 sm:max-lg:mt-16 lg:mt-4 2xl:mt-12 mb-4 sm:mb-8 justify-center limitedHeight:text-blue-500">
+        The Bechdel-Wallace Test
       </h1>
 
       <div className="flex flex-col items-center text-center sm:max-lg:mt-16 mt-8 mb-4">
