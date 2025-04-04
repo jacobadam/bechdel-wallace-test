@@ -18,7 +18,7 @@ const Results: React.FC<MovieDataProps> = ({
     (movie) => movie.year === selectedMovieYear
   );
   return (
-    <div className="text-center mt-4">
+    <div className="text-center mt-6 2xl:mt-16">
       {filteredMovieData && filteredMovieData.length > 0 && (
         <ul>
           {filteredMovieData.map((movie) => (
