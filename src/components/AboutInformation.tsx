@@ -29,7 +29,7 @@ const AboutInformation: React.FC = () => {
       <button className="relative group font-extrabold" onClick={handleClick}>
         About
         {!isTouchDevice && (
-          <p className="absolute right-full top-full mb-2 hidden group-hover:block bg-black text-white text-sm rounded p-4 min-w-96 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100 border border-white whitespace-normal text-center">
+          <p className="absolute right-full top-full mb-2 hidden group-hover:block bg-black text-white text-sm rounded p-4 min-w-96 z-10 transition-opacity duration-300 group-hover:opacity-100 border border-white whitespace-normal text-center font-normal">
             {aboutText}
           </p>
         )}
