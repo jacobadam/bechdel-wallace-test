@@ -58,19 +58,39 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex w-auto sm:w-80 gap-1">
-        <input
-          type="search"
-          id="input"
-          className="block w-full max-w-xs px-4 py-2 text-base font-normal shadow-xs text-red bg-transparent border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none leading-relaxed text-center"
-          placeholder="Search for a movie..."
-          required
-          value={searchTerm}
-          onChange={handleInputChange}
-          autoComplete="new-password"
-        />
-      </div>
+    <div className="flex flex-col items-center mt-6">
+      <form className="max-w-3xl w-9/12">
+        <label className="mb-2 text-base font-medium sr-only">Search</label>
+        <div className="relative">
+          <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg
+              className="w-5 h-5 text-[#ff914d] font-extrabold"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+              />
+            </svg>
+          </div>
+          <input
+            type="search"
+            id="input"
+            className="block w-full p-4 ps-10 text-base md:text-lg text-gray-200 border border-gray-300 rounded-lg bg-gray-800 focus:outline-none focus:ring-1 focus:ring-[#ff914d] focus:border-[#ff914d]"
+            placeholder="Search for a movie..."
+            required
+            value={searchTerm}
+            onChange={handleInputChange}
+            autoComplete="new-password"
+          />
+        </div>
+      </form>
 
       {isLoading && (
         <div role="status">
