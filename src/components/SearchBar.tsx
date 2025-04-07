@@ -55,6 +55,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     onSearch(movie.title, movie.year);
     setSearchTerm("");
     setSearchResults([]);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
