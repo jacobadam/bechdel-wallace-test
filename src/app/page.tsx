@@ -50,16 +50,16 @@ const Home: React.FC = () => {
 
       <div className="flex flex-col items-center text-center sm:max-lg:mt-16 mt-8 mb-4">
         <ol>
-          <li className="text-xs sm:text-lg mb-1 font-bold">
+          <li className="text-sm sm:text-lg mb-1 font-bold">
             How a film passes the Bechdel-Wallace test:
           </li>
-          <li className="text-xs sm:text-lg italic">
+          <li className="text-sm sm:text-lg italic">
             <b>1.</b> It has to have at least two [named] women in it
           </li>
-          <li className="text-xs sm:text-lg italic">
+          <li className="text-sm sm:text-lg italic">
             <b>2.</b> Who talk to each other
           </li>
-          <li className="text-xs sm:text-lg italic">
+          <li className="text-sm sm:text-lg italic">
             <b>3.</b> About something besides a man
           </li>
         </ol>
