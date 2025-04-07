@@ -54,7 +54,7 @@ const Home: React.FC = () => {
             How a film passes the Bechdel-Wallace test:
           </li>
           <li className="text-sm sm:text-lg italic">
-            <b>1.</b> It has to have at least two [named] women in it
+            <b>1.</b> It has to have at least two named women in it
           </li>
           <li className="text-sm sm:text-lg italic">
             <b>2.</b> Who talk to each other
