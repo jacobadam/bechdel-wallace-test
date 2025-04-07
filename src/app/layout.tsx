@@ -13,15 +13,15 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bechdel-Wallace Test Checker",
+  title: "The Bechdel-Wallace Test",
   description:
     "Check if a movie passes the Bechdel-Wallace Test. Enter a movie title and see the results.",
   openGraph: {
-    title: "Bechdel-Wallace Test Checker",
+    title: "The Bechdel-Wallace Test",
     description:
       "Check if a movie passes the Bechdel-Wallace Test. Enter a movie title and see the results.",
     url: "https://bechdeltest.vercel.app/",
-    siteName: "Bechdel-Wallace Test Checker",
+    siteName: "The Bechdel-Wallace Test",
     images: [
       {
         url: "/black-logo.jpg",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bechdel-Wallace Test Checker",
+    title: "The Bechdel-Wallace Test",
     description:
       "Check if a movie passes the Bechdel-Wallace Test. Enter a movie title and see the results.",
     images: ["/black-logo.jpg"],
