@@ -44,13 +44,13 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <h1 className="relative flex-1 text-center text-3xl xs:text-4xl sm:text-5xl 2xl:text-6xl mt-16 sm:max-lg:mt-16 lg:mt-4 2xl:mt-12 mb-4 sm:mb-8 justify-center limitedHeight:text-blue-500">
+      <h1 className="relative flex-1 text-center text-3xl xs:text-4xl sm:text-5xl 2xl:text-6xl mt-16 sm:max-lg:mt-16 lg:mt-0 2xl:mt-12 mb-4 sm:mb-8 justify-center">
         The Bechdel-Wallace Test
       </h1>
 
       <div className="flex flex-col items-center text-center sm:max-lg:mt-16 mt-8 mb-4">
         <ol>
-          <li className="text-sm sm:text-lg mb-1 font-bold">
+          <li className="text-sm sm:text-lg mb-2 font-bold">
             How a film passes the Bechdel-Wallace test:
           </li>
           <li className="text-sm sm:text-lg italic">
