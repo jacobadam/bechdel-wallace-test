@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       {
         url: "/black-logo.png",
         width: 1080,
-        height: 1080,
+        height: 1280,
         alt: "Bechdel-Wallace Test Logo",
       },
     ],
