@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/black-logo.png",
-        width: 1080,
-        height: 1080,
+        width: 1200,
+        height: 627,
         alt: "Bechdel-Wallace Test Logo",
       },
     ],
@@ -54,7 +54,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en/">
+    <html lang="en" className="bg-black">
+      <head className="bg-black">
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body className={`${roboto.variable} ${robotoMono.variable} antialiased`}>
         {children}
       </body>
