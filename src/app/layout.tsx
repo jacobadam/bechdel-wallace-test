@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "The Bechdel-Wallace Test",
     images: [
       {
-        url: "/black-logo.jpg",
+        url: "/black-logo.png",
         width: 1200,
         height: 630,
         alt: "Bechdel-Wallace Test Logo",
