@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -78,6 +79,7 @@ export default function RootLayout({
       </head>
       <body className={`${roboto.variable} ${robotoMono.variable} antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
