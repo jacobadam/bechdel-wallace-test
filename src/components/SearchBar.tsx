@@ -14,6 +14,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [searchResults, setSearchResults] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const isMovieSelection = useRef(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (searchTerm.trim() === "") {
@@ -42,10 +44,28 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       fetchData();
     }, 300);
 
-    return () => clearTimeout(delayDebounceFn);
-  }, [searchTerm]);
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setSearchResults([]);
+        setIsOpen(false);
+      }
+    };
+
+    if (searchResults.length) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      clearTimeout(delayDebounceFn);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [searchTerm, dropdownRef, searchResults.length]);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setIsOpen(true);
     setSearchTerm(e.target.value);
   };
 
@@ -55,13 +75,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     onSearch(movie.title, movie.year);
     setSearchTerm("");
     setSearchResults([]);
+    setIsOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <div className="flex flex-col items-center mt-6 sm:max-lg:mt-16">
       <form className="max-w-3xl w-9/12">
-        <label className="mb-2 text-base font-medium sr-only">Search</label>
         <div className="relative">
           <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
             <svg
@@ -92,7 +112,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           />
         </div>
       </form>
-
       {isLoading && (
         <div role="status">
           <svg
@@ -115,8 +134,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         </div>
       )}
 
-      {searchResults.length > 0 && (
-        <ul className="bg-black max-w-3xl w-9/12 border rounded p-2 mt-4 sm:mt-0 overflow-x-auto max-h-72">
+      {searchResults.length > 0 && isOpen && (
+        <ul
+          ref={dropdownRef}
+          className="bg-black max-w-3xl w-9/12 border rounded p-2 mt-4 sm:mt-0 overflow-x-auto max-h-72"
+        >
           {searchResults.map((movie, index) => (
             <li
               key={index}
