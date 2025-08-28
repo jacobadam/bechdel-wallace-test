@@ -17,7 +17,9 @@ const ParticlesBackground: React.FC = () => {
   }, []);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
+    if (process.env.NODE_ENV === "development") {
+      console.log(container);
+    }
   };
 
   const options: ISourceOptions = useMemo(
