@@ -116,7 +116,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       )}
 
       {searchResults.length > 0 && (
-        <ul className="max-w-3xl w-9/12 border rounded p-2 mt-4 sm:mt-0 overflow-x-auto max-h-72">
+        <ul className="bg-black max-w-3xl w-9/12 border rounded p-2 mt-4 sm:mt-0 overflow-x-auto max-h-72">
           {searchResults.map((movie, index) => (
             <li
               key={index}
