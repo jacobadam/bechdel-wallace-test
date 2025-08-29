@@ -20,6 +20,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   useEffect(() => {
     if (searchTerm.trim() === "") {
       setSearchResults([]);
+      return;
     }
 
     if (isMovieSelection.current) {
