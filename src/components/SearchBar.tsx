@@ -24,7 +24,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
     if (isMovieSelection.current) {
       isMovieSelection.current = false;
-      return;
     }
 
     const fetchData = async () => {
