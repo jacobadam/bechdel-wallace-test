@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, ChangeEvent, useRef } from "react";
 import { Movie } from "@/types/movieTypes";
-import { getMovieByTitle } from "@/utils/  bechdelTestApi";
+import { getMovieByTitle } from "@/utils/bechdelTestApi";
 import { decode } from "html-entities";
 
 interface SearchBarProps {
@@ -20,7 +20,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   useEffect(() => {
     if (searchTerm.trim() === "") {
       setSearchResults([]);
-      return;
     }
 
     if (isMovieSelection.current) {
@@ -44,6 +43,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       fetchData();
     }, 300);
 
+    return () => clearTimeout(delayDebounceFn);
+  }, [searchTerm]);
+
+  useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
         dropdownRef.current &&
@@ -54,15 +57,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       }
     };
 
-    if (searchResults.length) {
+    if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
-    return () => {
-      clearTimeout(delayDebounceFn);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [searchTerm, dropdownRef, searchResults.length]);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setIsOpen(true);
@@ -73,7 +73,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     isMovieSelection.current = true;
     setSearchTerm(decode(movie.title));
     onSearch(movie.title, movie.year);
-    setSearchTerm("");
     setSearchResults([]);
     setIsOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -139,9 +138,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           ref={dropdownRef}
           className="bg-black max-w-3xl w-9/12 border rounded p-2 mt-4 sm:mt-0 overflow-x-auto max-h-72"
         >
-          {searchResults.map((movie, index) => (
+          {searchResults.map((movie) => (
             <li
-              key={index}
+              key={movie.id}
               onClick={() => handleMovieSelect(movie)}
               className="cursor-pointer hover:bg-gray-50 p-2 text-[#ff914d] font-semibold"
             >
