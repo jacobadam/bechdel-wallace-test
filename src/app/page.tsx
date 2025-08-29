@@ -5,7 +5,7 @@ import SearchBar from "@/components/SearchBar";
 import Results from "@/components/Results";
 import AboutInformation from "@/components/AboutInformation";
 import Footer from "@/components/Footer";
-import { getMovieByTitle } from "@/utils/  bechdelTestApi";
+import { getMovieByTitle } from "@/utils/bechdelTestApi";
 import { Movie } from "@/types/movieTypes";
 
 const Home: React.FC = () => {
@@ -24,6 +24,7 @@ const Home: React.FC = () => {
       console.log(err);
     }
   };
+
   return (
     <div className="w-screen min-h-screen">
       <div className="flex flex-row mx-auto w-auto items-center justify-between ">
