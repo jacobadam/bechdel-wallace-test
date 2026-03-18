@@ -117,7 +117,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
       <p
         id="search-status"
-        className="max-w-3xl w-9/12 mt-3 text-sm text-gray-400"
+        className="max-w-3xl w-9/12 mt-3 text-sm text-gray-400 text-center"
       >
         Search is currently unavailable because the original Bechdel Test API
         used for this project has been discontinued.
