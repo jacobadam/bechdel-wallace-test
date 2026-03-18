@@ -100,10 +100,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
             </svg>
           </div>
           <input
+            disabled
+            aria-disabled="true"
+            aria-describedby="search-status"
             type="search"
             id="input"
-            className="block w-full p-4 ps-10 text-base md:text-lg text-gray-200 border border-gray-300 rounded-lg bg-gray-800 focus:outline-none focus:ring-1 focus:ring-[#ff914d] focus:border-[#ff914d]"
-            placeholder="Search for a movie..."
+            className="block w-full cursor-not-allowed p-4 ps-10 text-base md:text-lg text-gray-200 border border-gray-300 rounded-lg bg-gray-800 opacity-75 focus:outline-none focus:ring-1 focus:ring-[#ff914d] focus:border-[#ff914d]"
+            placeholder="Search unavailable"
             required
             value={searchTerm}
             onChange={handleInputChange}
@@ -111,6 +114,15 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           />
         </div>
       </form>
+
+      <p
+        id="search-status"
+        className="max-w-3xl w-9/12 mt-3 text-sm text-gray-400"
+      >
+        Search is currently unavailable because the original Bechdel Test API
+        used for this project has been discontinued.
+      </p>
+
       {isLoading && (
         <div role="status">
           <svg
@@ -152,4 +164,5 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     </div>
   );
 };
+
 export default SearchBar;
